@@ -173,3 +173,8 @@ footer{border-top:1px solid rgba(255,255,255,.06)}
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.9);
   transform: translateY(-2px);
 }
+.about-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
