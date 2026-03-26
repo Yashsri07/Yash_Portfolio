@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yash Portfolio</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet" />
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Canvas Background -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top blur-nav">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#home">YS<span class="brand-dot">.</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto gap-lg-3">
+          <li class="nav-item"><a class="nav-link" href="#home">Welcome</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certs">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#platforms">Platforms</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO / WELCOME -->
+  <header id="home" class="section container hero d-flex align-items-center">
+    <div class="row w-100 align-items-center">
+      <div class="col-lg-7">
+        <h1 class="display-5 fw-800 hero-title">
+          <span class="hello">Welcome,</span> My name is
+          <span class="grad-text">Yash Srivastava</span>
+        </h1>
+        <p class="lead mt-3">
+          Hey, I’m a third-year Computer Science student at
+          <b>United Institute of Technology</b>. I’m passionate about technology,
+          problem-solving, and building projects that make a real impact.
+          Over the past few years, I’ve explored
+          <span class="highlight">Machine Learning</span>,
+          <span class="highlight">Generative AI</span>, and
+          <span class="highlight">Web Development</span>.
+        </p>
+
+        <!-- Slide-in Buttons -->
+        <div class="btn-stack mt-4" id="cta-buttons">
+          <a href="#projects" class="btn btn-teal btn-lg w-100 text-start">
+            <i class="bi bi-kanban me-2"></i> Projects
+          </a>
+          <a href="#skills" class="btn btn-teal btn-lg w-100 text-start">
+            <i class="bi bi-rocket-takeoff me-2"></i> Skills
+          </a>
+          <a href="#certs" class="btn btn-teal btn-lg w-100 text-start">
+            <i class="bi bi-patch-check me-2"></i> Certifications
+          </a>
+          <a href="#platforms" class="btn btn-teal btn-lg w-100 text-start">
+            <i class="bi bi-hdd-network me-2"></i> Other Platforms
+          </a>
+          <a href="#contact" class="btn btn-teal btn-lg w-100 text-start">
+            <i class="bi bi-envelope-paper me-2"></i> Contact
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-5 mt-5 mt-lg-0">
+        <div class="photo-card tilt">
+          <img src="me1.jpg" alt="Yash Srivastava" class="img-fluid rounded-4" />
+          <div class="photo-glass">
+            <span><i class="bi bi-emoji-sunglasses"></i> Exploring • Building • Shipping</span>
+          </div>
+          <div class="photo-badges">
+            <span class="badge bg-teal">ML</span>
+            <span class="badge bg-teal">GenAI</span>
+            <span class="badge bg-teal">Web</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about" class="section container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-7">
+        <h2 class="sec-title">About <span class="grad-text">Me</span></h2>
+        <p>
+          I love turning ideas into usable products. My focus areas include
+          NLP projects, lightweight GenAI experiments, and clean, responsive
+          interfaces. I enjoy collaborating, writing clean code, and shipping fast.
+        </p>
+        <ul class="about-list">
+          <li><i class="bi bi-check2-circle"></i> Curious problem-solver</li>
+          <li><i class="bi bi-check2-circle"></i> Team player & fast learner</li>
+          <li><i class="bi bi-check2-circle"></i> Loves UI/UX & engineering both</li>
+        </ul>
+        <a href="resume.pdf" target="_blank" class="btn-custom btn-view"> View Resume</a> 
+        <a href="resume.pdf" download class="btn-custom btn-download"> Download Resume</a>
+      </div>
+      <div class="col-lg-5">
+        <div class="stat-card">
+          <div><span class="stat-num" data-count="5">0</span><span class="stat-label">+ Projects</span></div>
+          <div><span class="stat-num" data-count="6">0</span><span class="stat-label">+ Skills</span></div>
+          <div><span class="stat-num" data-count="5">0</span><span class="stat-label">+ Certificates</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS (React renders cards here) -->
+  <section id="projects" class="section container">
+    <h2 class="sec-title"><span class="grad-text">Projects</span></h2>
+    <div id="projects-root" class="row g-4 mt-1"></div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section container">
+    <h2 class="sec-title">Skills & <span class="grad-text">Tools</span></h2>
+    <div class="row g-3">
+      <div class="col-6 col-md-3"><div class="pill">Python Language</div></div>
+      <div class="col-6 col-md-3"><div class="pill">JAVA Language</div></div>
+      <div class="col-6 col-md-3"><div class="pill">Machine Learning (beginner)</div></div>
+      <div class="col-6 col-md-3"><div class="pill">NLP</div></div>
+      <div class="col-6 col-md-3"><div class="pill">Reactjs</div></div>
+      <div class="col-6 col-md-3"><div class="pill">DBMS</div></div>
+      <div class="col-6 col-md-3"><div class="pill">DSA with java</div></div>
+      <div class="col-6 col-md-3"><div class="pill">Git/GitHub</div></div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certs" class="section container">
+    <h2 class="sec-title">Certifications</h2>
+    <ul class="timeline">
+      <li><span>2024</span> GenerativeAI using NLP – United Global Infoservice PVT.LTD.</li>
+      <li><span>2024</span> Python with Data Science – UGI</li>
+      <li><span>2023</span> Code Arambh</li>
+    </ul>
+  </section>
+
+  <!-- PLATFORMS -->
+  <section id="platforms" class="section container">
+    <h2 class="sec-title">Other <span class="grad-text">Platforms</span></h2>
+    <div class="row g-3">
+      <div class="col-md-4"><a class="card-link" href="https://github.com/Yashsri07" target="_blank"><i class="bi bi-github"></i> GitHub</a></div>
+      <div class="col-md-4"><a class="card-link" href="https://www.linkedin.com/in/yash-srivastava-a0a380320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a></div>
+      <div class="col-md-4"><a class="card-link" href="https://www.instagram.com/yash_srivastava_07?igsh=NWpxMnlkZ3FjaTR0" target="_blank"><i class="bi bi-instagram"></i> instagram</a></div>
+      <div class="col-md-4"><a class="card-link" href="https://leetcode.com/u/Yashsri_07/" target="_blank"><i class="fa-solid fa-code"></i> Leetcode</a></div>
+      <div class="col-md-4"><a class="card-link" href="https://www.geeksforgeeks.org/user/srivastahatt/" target="_blank"><i class="bi bi-GeekForGeek"></i> GeeksforGeeks</a></div>
+      <div class="col-md-4"><a class="card-link" href="https://linktr.ee/Yashsri07" target="_blank"><i class="bi bi-linkedtree"></i> LinkedTree</a></div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section container">
+    <h2 class="sec-title">Contact <span class="grad-text">Me</span></h2>
+    <form class="row g-3 contact-form" onsubmit="event.preventDefault(); alert('Thanks! I will get back to you.'); this.reset();">
+      <div class="col-md-6">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control form-control-lg" required />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control form-control-lg" required />
+      </div>
+      <div class="col-12">
+        <label class="form-label">Message</label>
+        <textarea class="form-control form-control-lg" rows="4" required></textarea>
+      </div>
+      <div class="col-12">
+        <button class="btn btn-teal btn-lg"><i class="bi bi-send me-2"></i>Send</button>
+      </div>
+    </form>
+  </section>
+
+  <footer class="py-4 text-center text-secondary small">© <span id="yr"></span> Yash Srivastava </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- React (CDN) -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+  <!-- Page Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
