@@ -80,3 +80,35 @@
     }
     function ProjectGrid(){ return e(React.Fragment, null, projects.map((p,i)=> e(Card, {p, key:i}))); }
     ReactDOM.createRoot(document.getElementById('projects-root')).render(e(ProjectGrid));
+
+    // ================= CONTACT FORM HANDLER =================
+const form = document.getElementById("contact-form");
+const successMsg = document.getElementById("success-msg");
+
+if(form){
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault(); // prevent page reload
+
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        successMsg.style.display = "block";
+        form.reset();
+      } else {
+        alert("❌ Something went wrong. Try again!");
+      }
+
+    } catch (error) {
+      alert("❌ Network error!");
+    }
+  });
+}
